@@ -1,0 +1,29 @@
+#!/bin/bash
+
+./clean
+
+# Init environment
+FILE=.env
+if [ -f "$FILE" ]; then
+    echo "$FILE exist"
+else
+    cp .env.example $FILE
+fi
+
+echo "Building image.."
+docker-compose build --no-cache
+
+echo "Running.."
+docker-compose up -d
+
+echo "Install dependencies.."
+./cmd composer install
+./cmd npm install
+./cmd npm run dev
+
+./cmd php artisan key:generate
+./cmd php artisan ide-helper:generate
+./cmd php artisan ide-helper:meta
+./cmd php artisan storage:link
+
+echo "Done!"

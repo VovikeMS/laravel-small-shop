@@ -1,12 +1,23 @@
+*.DS_Store
+
+# Laravel 5
 /node_modules
-/public/hot
 /public/storage
 /storage/*.key
 /vendor
+.idea
 .env
-.env.backup
+
+*.log
+
+# Static resources
+public/mix-manifest.json
+public/dist/*
+!public/dist/.gitkeep
+
+# Developement
+.phpstorm.meta.php
+_ide_helper.php
+_ide_helper_models.php
 .phpunit.result.cache
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
+composer.phar
