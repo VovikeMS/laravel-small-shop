@@ -26,4 +26,6 @@ echo "Install dependencies.."
 ./cmd php artisan ide-helper:meta
 ./cmd php artisan storage:link
 
+./cmd php artisan migrate
+
 echo "Done!"
