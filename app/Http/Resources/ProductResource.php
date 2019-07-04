@@ -20,6 +20,8 @@ class ProductResource extends JsonResource
             'name' => $this->name,
             'price' => $this->price,
             'attributes' => ProductAttributeResource::collection($this->whenLoaded('attributes')),
+            'related' => ProductResource::collection($this->whenLoaded('related')),
+            'relatedTo' => new ProductResource($this->whenLoaded('relatedTo')),
         ];
     }
 }

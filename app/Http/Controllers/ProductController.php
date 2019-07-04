@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index(): Responsable
     {
-        $products = Product::with('attributes')->get();
+        $products = Product::with(['attributes'])->get();
 
         return ProductResource::collection($products);
     }
@@ -25,7 +25,12 @@ class ProductController extends Controller
      */
     public function show($id): Responsable
     {
-        $product = Product::with('attributes')->find($id);
+        $product = Product::with([
+            'attributes',
+            'related.attributes',
+            'relatedTo.attributes',
+            'relatedTo.related.attributes',
+        ])->find($id);
 
         if (! $product instanceof Product) {
             abort(Response::HTTP_NOT_FOUND);
