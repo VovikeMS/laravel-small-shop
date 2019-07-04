@@ -18,12 +18,6 @@ After process was finished - open `http://small-shop.localhost`.
 - `docker-compose stop` - stop project
 - `./cmd {any command}` - execute `{any command}` inside container, like `./cmd php artisan migrate`
 
-Start:
-
-```bash
-$ docker-compose up -d
-```
-
 ## Troubleshooting
 
 Some apps can't recognize the *.localhost domains so to fix that you probably need to append next lines at the end of `/etc/hosts` file:
