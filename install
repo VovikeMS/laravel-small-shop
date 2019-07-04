@@ -27,5 +27,6 @@ echo "Install dependencies.."
 ./cmd php artisan storage:link
 
 ./cmd php artisan migrate
+./cmd php artisan db:seed
 
 echo "Done!"

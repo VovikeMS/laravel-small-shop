@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-class WelcomeController extends Controller
+class CatalogController extends Controller
 {
     /**
-     * Show the application homepage.
+     * Catalog handler
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
     {
-        return view('welcome');
+        return view('catalog');
     }
 }
